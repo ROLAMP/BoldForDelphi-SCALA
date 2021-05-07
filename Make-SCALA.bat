@@ -12,5 +12,5 @@ REM == COPY FLAT STRUCTURE -> SCALA ==
 REM
 
 FOR %%G IN (*) DO COPY *.* %destination%\
-for /f %%G in ('dir /b /s /a:d Source') DO COPY %%G %destination%\
+FOR /f %%G in ('dir /b /s /a:d Source') DO COPY %%G %destination%\
 
