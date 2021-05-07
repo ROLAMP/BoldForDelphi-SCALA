@@ -1,3 +1,6 @@
+
+{ Global compiler directives }
+{$include bold.inc}
 unit BoldSamplesReg;
 
 interface
@@ -6,21 +9,26 @@ procedure Register;
 
 implementation
 
+{$R BoldSamplesReg.res}
+
 uses
   SysUtils,
   Classes,
   DesignIntf,
   ActnList,
+{$IFDEF BOLD_DELPHI16_OR_LATER}
+  Actions,
+{$ENDIF}
+{$IFNDEF LightMemberDeriver}
   BoldFormSaver,
+{$ENDIF}
+  BoldGuard,
   BoldPropertyEditors,
   BoldNewObjectInterceptor,
-  BoldSortingGrid,
   BoldIDEConsts,
   BoldEditOCLAction,
   BoldEditOCLActionPropEditor,
   BoldDebugActions;
-
-{$R *.res}
 
 type
   TTextFileProperty = class(TBoldFileNameProperty)
@@ -28,13 +36,15 @@ type
     function FileFilter: string; override;
   end;
 
+
 procedure RegisterComponentsOnPalette;
 begin
   RegisterComponents(BOLDPAGENAME_MISC,
                      [
-                      TBoldNewObjectInterceptor,
-                      TBoldFormSaver,
-                      TBoldSortingGrid
+                      TBoldNewObjectInterceptor
+{$IFNDEF LightMemberDeriver}
+                      ,TBoldFormSaver
+{$ENDIF}
                      ]);
 end;
 
@@ -54,8 +64,8 @@ end;
 
 procedure RegisterEditors;
 begin
-  RegisterPropertyEditor(TypeInfo(string), TBoldNewObjectInterceptor, 'Filename', TTextFileProperty); //do not localize
-  RegisterPropertyEditor(TypeInfo(TComponent), TBoldEditOCLAction, 'BoldComponent', TBoldOCLComponentEditor); //do not localize
+  RegisterPropertyEditor(TypeInfo(string), TBoldNewObjectInterceptor, 'Filename', TTextFileProperty);
+  RegisterPropertyEditor(TypeInfo(TComponent), TBoldEditOCLAction, 'BoldComponent', TBoldOCLComponentEditor);
 end;
 
 procedure Register;
@@ -71,6 +81,5 @@ function TTextFileProperty.FileFilter: string;
 begin
   Result := Format('%s (*%s)|*%1:s', ['Text files', '.txt']);
 end;
-
+  
 end.
-

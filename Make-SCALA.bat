@@ -1,5 +1,5 @@
 echo off
-SET destination="D:\DEV\GITHUB.com\BoldForDelphi_SCALA"
+SET destination="E:\github.com\BoldForDelphi-SCALA"
 
 REM
 REM == CREATE SCALA FOLDER ==
