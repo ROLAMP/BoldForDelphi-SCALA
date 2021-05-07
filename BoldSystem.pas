@@ -1371,7 +1371,6 @@ uses
    BoldAttributes,
    BoldFreeStandingValueFactories,
    BoldMath;
-   //WinApi.Windows;
 
 var
   G_DefaultBoldSystem: TBoldSystem = nil;

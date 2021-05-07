@@ -246,8 +246,7 @@ end;
 procedure TBoldADOQuery.ExecSQL;
 begin
 {$IFDEF BOLD_DELPHI10_OR_LATER}
-  //BoldLogSQLWide(Query.SQL, self); //RIL
-  BoldLogSQL(Query.SQL);
+  BoldLogSQLWide(Query.SQL, self);
 {$ELSE}
   BoldLogSQL(Query.SQL);
 {$ENDIF}
@@ -319,8 +318,7 @@ end;
 procedure TBoldADOQuery.Open;
 begin
 {$IFDEF BOLD_DELPHI10_OR_LATER}
-  //BoldLogSQLWide(Query.SQL, self);  //RIL
-  BoldLogSQL(Query.SQL);
+  BoldLogSQLWide(Query.SQL, self);
 {$ELSE}
   BoldLogSQL(Query.SQL);
 {$ENDIF}

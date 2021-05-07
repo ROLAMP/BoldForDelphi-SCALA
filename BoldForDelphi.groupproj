@@ -7,7 +7,7 @@
             <Dependencies/>
         </Projects>
         <Projects Include="BoldVCLGUI.dproj">
-            <Dependencies>BoldUtility.dproj</Dependencies>
+            <Dependencies/>
         </Projects>
         <Projects Include="BoldCom.dproj">
             <Dependencies/>
@@ -37,10 +37,10 @@
             <Dependencies/>
         </Projects>
         <Projects Include="BoldAdo.dproj">
-            <Dependencies>Bold.dproj;BoldVCLGUI.dproj;BoldCom.dproj;BoldComGUI.dproj;BoldUml.dproj;BoldMMLink.dproj;BoldUtility.dproj;BoldBDE.dproj;BoldExPe.dproj;BoldIB.dproj;BoldXMILink.dproj;BoldAdvantage.dproj;BoldDBExpress.dproj;BoldDBIsam.dproj;BoldDOA.dproj;BoldOLLE.dproj;BoldSQLDirect.dproj;BoldUDPProp.dproj;Source\Unassigned\BoldUMLModelEditorDebugger.dproj</Dependencies>
+            <Dependencies/>
         </Projects>
         <Projects Include="BoldAdvantage.dproj">
-            <Dependencies>Bold.dproj;BoldVCLGUI.dproj;BoldCom.dproj;BoldComGUI.dproj;BoldUml.dproj;BoldUtility.dproj;BoldBDE.dproj;BoldSQLDirect.dproj;Source\Unassigned\BoldUMLModelEditorDebugger.dproj</Dependencies>
+            <Dependencies/>
         </Projects>
         <Projects Include="BoldDBExpress.dproj">
             <Dependencies/>
@@ -80,13 +80,13 @@
     <Target Name="Bold:Make">
         <MSBuild Projects="Bold.dproj" Targets="Make"/>
     </Target>
-    <Target Name="BoldVCLGUI" DependsOnTargets="BoldUtility">
+    <Target Name="BoldVCLGUI">
         <MSBuild Projects="BoldVCLGUI.dproj"/>
     </Target>
-    <Target Name="BoldVCLGUI:Clean" DependsOnTargets="BoldUtility:Clean">
+    <Target Name="BoldVCLGUI:Clean">
         <MSBuild Projects="BoldVCLGUI.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="BoldVCLGUI:Make" DependsOnTargets="BoldUtility:Make">
+    <Target Name="BoldVCLGUI:Make">
         <MSBuild Projects="BoldVCLGUI.dproj" Targets="Make"/>
     </Target>
     <Target Name="BoldCom">
@@ -170,22 +170,22 @@
     <Target Name="BoldXMILink:Make">
         <MSBuild Projects="BoldXMILink.dproj" Targets="Make"/>
     </Target>
-    <Target Name="BoldAdo" DependsOnTargets="Bold;BoldVCLGUI;BoldCom;BoldComGUI;BoldUml;BoldMMLink;BoldUtility;BoldBDE;BoldExPe;BoldIB;BoldXMILink;BoldAdvantage;BoldDBExpress;BoldDBIsam;BoldDOA;BoldOLLE;BoldSQLDirect;BoldUDPProp;BoldUMLModelEditorDebugger">
+    <Target Name="BoldAdo">
         <MSBuild Projects="BoldAdo.dproj"/>
     </Target>
-    <Target Name="BoldAdo:Clean" DependsOnTargets="Bold:Clean;BoldVCLGUI:Clean;BoldCom:Clean;BoldComGUI:Clean;BoldUml:Clean;BoldMMLink:Clean;BoldUtility:Clean;BoldBDE:Clean;BoldExPe:Clean;BoldIB:Clean;BoldXMILink:Clean;BoldAdvantage:Clean;BoldDBExpress:Clean;BoldDBIsam:Clean;BoldDOA:Clean;BoldOLLE:Clean;BoldSQLDirect:Clean;BoldUDPProp:Clean;BoldUMLModelEditorDebugger:Clean">
+    <Target Name="BoldAdo:Clean">
         <MSBuild Projects="BoldAdo.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="BoldAdo:Make" DependsOnTargets="Bold:Make;BoldVCLGUI:Make;BoldCom:Make;BoldComGUI:Make;BoldUml:Make;BoldMMLink:Make;BoldUtility:Make;BoldBDE:Make;BoldExPe:Make;BoldIB:Make;BoldXMILink:Make;BoldAdvantage:Make;BoldDBExpress:Make;BoldDBIsam:Make;BoldDOA:Make;BoldOLLE:Make;BoldSQLDirect:Make;BoldUDPProp:Make;BoldUMLModelEditorDebugger:Make">
+    <Target Name="BoldAdo:Make">
         <MSBuild Projects="BoldAdo.dproj" Targets="Make"/>
     </Target>
-    <Target Name="BoldAdvantage" DependsOnTargets="Bold;BoldVCLGUI;BoldCom;BoldComGUI;BoldUml;BoldUtility;BoldBDE;BoldSQLDirect;BoldUMLModelEditorDebugger">
+    <Target Name="BoldAdvantage">
         <MSBuild Projects="BoldAdvantage.dproj"/>
     </Target>
-    <Target Name="BoldAdvantage:Clean" DependsOnTargets="Bold:Clean;BoldVCLGUI:Clean;BoldCom:Clean;BoldComGUI:Clean;BoldUml:Clean;BoldUtility:Clean;BoldBDE:Clean;BoldSQLDirect:Clean;BoldUMLModelEditorDebugger:Clean">
+    <Target Name="BoldAdvantage:Clean">
         <MSBuild Projects="BoldAdvantage.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="BoldAdvantage:Make" DependsOnTargets="Bold:Make;BoldVCLGUI:Make;BoldCom:Make;BoldComGUI:Make;BoldUml:Make;BoldUtility:Make;BoldBDE:Make;BoldSQLDirect:Make;BoldUMLModelEditorDebugger:Make">
+    <Target Name="BoldAdvantage:Make">
         <MSBuild Projects="BoldAdvantage.dproj" Targets="Make"/>
     </Target>
     <Target Name="BoldDBExpress">
